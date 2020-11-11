@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {UserServices} from './services/UserServices';
 import {HttpClientModule} from '@angular/common/http';
+import {PangolinServices} from './services/PangolinServices';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,9 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule,
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    PangolinServices
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
