@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import {UserServices} from './services/UserServices';
 import {HttpClientModule} from '@angular/common/http';
-import {PangolinServices} from './services/PangolinServices';
+import {PangolinServices} from './services/managers/PangolinServices';
+import {ROUTING} from './app.routing';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,8 @@ import {PangolinServices} from './services/PangolinServices';
   ],
   imports: [
     HttpClientModule,
-    BrowserModule
+    BrowserModule,
+    ROUTING
   ],
   providers: [
     PangolinServices
