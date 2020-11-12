@@ -49,7 +49,6 @@ import {
   MatStepperModule,
 } from '@angular/material';
 import {NgbActiveModal, NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {AddPangolinModalComponent} from './home/addPangolin/add.pangolin.modal.component';
 import {CdkTableModule} from '@angular/cdk/table';
 import {GetAllUnknownPangolinResolver} from './services/resolvers/get.all.unknown.pangolin.resolver';
 import {MyProfileComponent} from './profile/my.profile.component';
@@ -133,9 +132,6 @@ export class DemoMaterialModule {
     NgbActiveModal
   ],
   bootstrap: [AppComponent],
-  entryComponents: [
-    AddPangolinModalComponent,
-  ],
 })
 export class AppModule {
 }
