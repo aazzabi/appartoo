@@ -6,8 +6,20 @@
     </h2>
   </header>
   <div class="row">
-    <button class="btn btn-primary btn-lg">Ajouter</button>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Pangolin" aria-label="Pangolin" [matAutocomplete]="auto" [formControl]="pangolinCtrl">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let pangolin of filteredPangolins | async" [value]="pangolin.pseudo" >
+<!--            <img style="vertical-align:middle;" aria-hidden src="{{pangolin.flag}}" height="25" />-->
+            <span>{{ pangolin.name }}</span> <small>({{pangolin.pseudo}})</small>
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <button class="btn btn-primary btn-md" (click)="addPangolin()">Ajouter</button>
+    </form>
   </div>
+
   <!--    <add-pang class="ui block segment" (save)="saveContact($event)" [contact]="contact"></add-pang>-->
   <!--    <pangolin-list class="ui block segment" [contacts]="pangolin.pangolins" (edit)="editPangolins($event)" (delete)="deleteContact($event)"></pangolin-list>-->
   <div class="ui block row">
@@ -30,7 +42,6 @@
       </div>
       <div class="extra content">
         <div class="ui two buttons">
-          <div class="btn btn-warning btn-md" (click)="editPangolin(contact,i)"><i class="fa fa-pencil"></i>Edit</div>
           <div class="btn btn-danger btn-md" (click)="deletePangolin(contact,i)">Delete</div>
         </div>
       </div>
