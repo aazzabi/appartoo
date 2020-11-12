@@ -68,6 +68,7 @@ export class StorageService {
    * @param {string} key
    */
   static getUser() {
-    return jwt_decode(this.get('currentPangolin'));
+    const data = jwt_decode(this.get('currentPangolin').token);
+    return data.pangolin ;
   }
 }

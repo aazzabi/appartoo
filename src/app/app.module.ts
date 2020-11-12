@@ -9,6 +9,8 @@ import {RegisterComponent} from './pages/register/register.component';
 import {HomeComponent} from './home/home.component';
 import {FormsModule} from '@angular/forms';
 import {AuthGuard} from './services/security/auth.guard';
+import {StorageService} from './services/security/storage.service';
+import {GetPangolinResolver} from './services/resolvers/get.pangolin.resolver';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import {AuthGuard} from './services/security/auth.guard';
   ],
   providers: [
     AuthGuard,
-    PangolinServices
+    PangolinServices,
+    StorageService,
+    GetPangolinResolver
   ],
   bootstrap: [AppComponent]
 })

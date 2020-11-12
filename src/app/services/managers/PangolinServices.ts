@@ -23,8 +23,8 @@ export class PangolinServices {
   getAll() {
     return this.http.get(this.url + '/pangolins');
   }
-  getById(id: number) {
-    return this.http.get(this.url + '/pangolins/' + id);
+  getById(id: any) {
+    return this.http.get<Pangolin>(this.url + '/pangolins/' + id);
   }
   update(p: Pangolin) {
     const body = JSON.stringify(p);
