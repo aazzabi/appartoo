@@ -102,7 +102,6 @@ export class DemoMaterialModule {
     MyProfileComponent,
     EditProfileComponent,
     RegisterComponent,
-    AddPangolinModalComponent,
     HomeComponent,
   ],
   imports: [
