@@ -24,9 +24,13 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/sass/light-bootstrap-dashboard.scss",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/jquery-jvectormap.js",
+              "src/assets/js/perfect-scrollbar.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -89,9 +93,13 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/sass/light-bootstrap-dashboard.scss",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/perfect-scrollbar.min.js",
+              "src/assets/js/jquery-jvectormap.js"
+            ]
           }
         },
         "lint": {
