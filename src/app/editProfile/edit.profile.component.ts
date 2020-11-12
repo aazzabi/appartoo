@@ -50,7 +50,7 @@ export class EditProfileComponent {
   onSubmit() {
     this.submitted = true;
     this.pangolinService.update(
-      this.profile._id,
+      this.profile.id,
       this.editProfile.value.name,
       this.editProfile.value.pseudo,
       this.editProfile.value.breed,
