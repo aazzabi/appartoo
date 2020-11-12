@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import * as jwt_decode from 'jwt-decode';
 
 @Injectable()
 export class StorageService {
@@ -59,5 +60,14 @@ export class StorageService {
       expiryTime: expiryTime,
       data: value
     };
+  }
+
+  /**
+   * decod logged user data from localStorage
+   *
+   * @param {string} key
+   */
+  static getUser() {
+    return jwt_decode(this.get('currentPangolin'));
   }
 }
