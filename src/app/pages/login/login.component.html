@@ -1,5 +1,5 @@
 <div class="wrapper wrapper-full-page">
-  <div class="full-page login-page" data-color="red" data-image="../../../assets/img/full-screen-image-1.jpg">
+  <div class="full-page login-page" data-color="blue" data-image="../../../assets/img/full-screen-image-2.jpg">
 
     <!--   you can change the color of the filter page using: data-color="blue | azure | green | orange | red | purple" -->
     <div class="content">
@@ -9,7 +9,7 @@
             <form method="#" action="#"  (ngSubmit)="f.form.valid && Login()" #f="ngForm" novalidate>
 
               <!--   if you want to have the card without animation please remove the ".card-hidden" class   -->
-              <div class="card card-hidden">
+              <div class="card card-plain">
                 <div class="header text-center">Login</div>
                 <div class="content">
                   <div class="form-group">
@@ -21,6 +21,7 @@
                     <input type="password" [(ngModel)]="model.password" placeholder="Password" name="password" class="form-control">
                   </div>
                 </div>
+                Si vous n'avez pas encore un compte <br>veuillez en <a routerLink="/register">créer un nouveau</a>
                 <div class="footer text-center">
                   <button type="submit" class="btn btn-fill btn-danger btn-wd">Login</button>
                 </div>

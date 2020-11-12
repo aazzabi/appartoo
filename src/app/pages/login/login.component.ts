@@ -13,9 +13,7 @@ export class LoginComponent implements OnInit {
   public data: any = [];
 
   constructor(private loginService: LoginService, private router: Router, private route: ActivatedRoute) {
-    if (this.loginService.currentPangolinValue) {
-      this.router.navigate(['/']);
-    }
+    console.log('login')
   }
 
   ngOnInit() {
