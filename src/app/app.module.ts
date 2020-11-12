@@ -15,19 +15,104 @@ import {RegisterService} from './services/managers/RegisterService';
 import {Toast, ToastrModule} from 'ngx-toastr';
 import {IsAuthenticatedGuard} from './services/security/is.authenticated.guard';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatStepperModule,
+} from '@angular/material';
+import {NgbActiveModal, NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {AddPangolinModalComponent} from './home/addPangolin/add.pangolin.modal.component';
+import {CdkTableModule} from '@angular/cdk/table';
+import {GetAllUnknownPangolinResolver} from './services/resolvers/get.all.unknown.pangolin.resolver';
+import {MyProfileComponent} from './profile/my.profile.component';
+import {GetProfilePangolinResolver} from './services/resolvers/get.profile.pangolin.resolver';
+import { EditProfileComponent } from './editProfile/edit.profile.component';
+
+
+@NgModule({
+  exports: [
+    CdkTableModule,
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+  ]
+})
+export class DemoMaterialModule {
+}
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    MyProfileComponent,
+    EditProfileComponent,
     RegisterComponent,
-    HomeComponent
+    AddPangolinModalComponent,
+    HomeComponent,
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     ROUTING,
     FormsModule,
+    NgbModule,
+    DemoMaterialModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot({
@@ -42,9 +127,15 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     StorageService,
     RegisterService,
     GetPangolinResolver,
-    Toast
+    GetAllUnknownPangolinResolver,
+    GetProfilePangolinResolver,
+    Toast,
+    NgbActiveModal
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    AddPangolinModalComponent,
+  ],
 })
 export class AppModule {
 }

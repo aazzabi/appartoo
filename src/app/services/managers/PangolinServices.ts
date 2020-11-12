@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import { environment } from '../../../environments/environment.prod';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {environment} from '../../../environments/environment.prod';
 import {Pangolin} from '../../models/Pangolin';
+import {StorageService} from '../security/storage.service';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -17,26 +18,39 @@ const httpOptions = {
 export class PangolinServices {
   // @ts-ignore
   url = environment.SERVER_URL;
+
   constructor(public http: HttpClient) {
   }
 
   getAll() {
     return this.http.get(this.url + '/pangolins');
   }
+
   getById(id: any) {
     return this.http.get<Pangolin>(this.url + '/pangolins/' + id);
   }
-  update(p: Pangolin) {
-    const body = JSON.stringify(p);
-    return this.http.put(this.url + '/pangolins/update', p, httpOptions);
+
+  // tslint:disable-next-line:variable-name
+  update(_id: any, name: string, pseudo: string, breed: string, weight: any, password?: string) {
+    if (password) {
+      return this.http.put(this.url + '/pangolins/update', {_id, name, pseudo, password, breed, weight}, httpOptions);
+    } else {
+      return this.http.put(this.url + '/pangolins/update', {_id, name, pseudo, breed, weight}, httpOptions);
+    }
   }
 
-/*
-  constructor(private service: UserServices) {
-    this.service.getAll().subscribe(res => {
-      console.log(res);
-    });
+  deletePangolinFromList(idPango: any) {
+    return this.http.post(this.url + '/pangolins/removeFromList/' + StorageService.getUser().id + '/' + idPango, null, httpOptions);
+  }
 
- */
+  getAllUnknownPangolin(id: any) {
+    return this.http.get<Pangolin[]>(this.url + '/pangolins/getAllUnknownPangolin/' + id);
+  }
+
+  // pseudo is unique
+  addPangolinsToListByPseudo(pseudo: any) {
+    return this.http.get(this.url + '/pangolins/addToList/' + StorageService.getUser().id + '/' + pseudo);
+  }
+
 
 }
