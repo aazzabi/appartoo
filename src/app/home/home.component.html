@@ -1,10 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="ui container main">
+  <header class="row">
+    <h2 class="ui center aligned icon header">
+      <i class="circular address book outline grey icon"></i>
+      {{pangolin.name}}
+    </h2>
+  </header>
+  <div class="row">
+    <button class="btn btn-primary btn-lg">Ajouter</button>
+  </div>
+  <!--    <add-pang class="ui block segment" (save)="saveContact($event)" [contact]="contact"></add-pang>-->
+  <!--    <pangolin-list class="ui block segment" [contacts]="pangolin.pangolins" (edit)="editPangolins($event)" (delete)="deleteContact($event)"></pangolin-list>-->
+  <div class="ui block row">
+    <div class="ui card col-md-3" *ngFor="let contact of pangolin.pangolins; let i = index ">
+      <div class="content">
+        <i class="right floated address card outline icon"></i>
+        <div class="header">
+          {{contact.name}}
+        </div>
+        <div class="description">
+          <span class="call">
+            <i class="call icon"></i>{{contact.pseudo}}
+          </span>
+        </div>
+        <div class="description">
+          <span class="marker">
+            <i class="marker icon"></i>{{contact.weight}}
+          </span>
+        </div>
+      </div>
+      <div class="extra content">
+        <div class="ui two buttons">
+          <div class="btn btn-warning btn-md" (click)="editPangolin(contact,i)"><i class="fa fa-pencil"></i>Edit</div>
+          <div class="btn btn-danger btn-md" (click)="deletePangolin(contact,i)">Delete</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
