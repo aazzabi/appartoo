@@ -26,9 +26,6 @@
                   <div class="form-group">
                     <label>Mot de passe : </label>
                     <input type="password" placeholder="Mot de passe" formControlName="password" class="form-control">
-                    <div *ngIf="f.name.touched && f.password.errors" class="invalid-feedback">
-                      <div *ngIf="f.name.password.required">Ce champ est obligatoire</div>
-                    </div>
                   </div>
                   <div class="form-group">
                     <label>Confirmation de mot de passe :</label>
