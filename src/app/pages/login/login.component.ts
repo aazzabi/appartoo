@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {LoginService} from '../../services/security/login.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {AlertService} from '../../services/common/AlertService';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   model: any = {};
   public data: any = [];
 
-  constructor(private loginService: LoginService, private router: Router, private route: ActivatedRoute) {
+  constructor(private alertService: AlertService, private loginService: LoginService, private router: Router, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -25,7 +26,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/']);
         },
         error => {
-          
+            this.alertService.error('Veuillez verifier les attributs');
         }
       );
   }

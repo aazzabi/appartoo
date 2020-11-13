@@ -54,6 +54,8 @@ import {GetAllUnknownPangolinResolver} from './services/resolvers/get.all.unknow
 import {MyProfileComponent} from './profile/my.profile.component';
 import {GetProfilePangolinResolver} from './services/resolvers/get.profile.pangolin.resolver';
 import { EditProfileComponent } from './editProfile/edit.profile.component';
+import {AlertComponent} from './alerteJumbotron/alert.component';
+import {AlertService} from './services/common/AlertService';
 
 
 @NgModule({
@@ -103,6 +105,7 @@ export class DemoMaterialModule {
     EditProfileComponent,
     RegisterComponent,
     HomeComponent,
+    AlertComponent,
   ],
   imports: [
     HttpClientModule,
@@ -128,6 +131,7 @@ export class DemoMaterialModule {
     GetAllUnknownPangolinResolver,
     GetProfilePangolinResolver,
     Toast,
+    AlertService,
     NgbActiveModal
   ],
   bootstrap: [AppComponent],
