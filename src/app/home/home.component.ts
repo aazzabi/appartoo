@@ -90,7 +90,6 @@ export class HomeComponent {
   }
 
   addPangolin() {
-    console.log(this.pangolinCtrl.value);
     this.pangolinService.addPangolinsToListByPseudo(this.pangolinCtrl.value);
     this.getPangolinDetails();
     this.filterUnknownPangolins();

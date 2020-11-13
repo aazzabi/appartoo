@@ -17,7 +17,6 @@ export class RegisterService {
   }
 
   register(u: Pangolin) {
-    console.log(u);
     const body = JSON.stringify(u);
     return this.http.post(environment.SERVER_URL + '/register', body, httpOptions);
   }

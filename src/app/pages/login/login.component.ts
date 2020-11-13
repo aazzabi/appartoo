@@ -13,7 +13,6 @@ export class LoginComponent implements OnInit {
   public data: any = [];
 
   constructor(private loginService: LoginService, private router: Router, private route: ActivatedRoute) {
-    console.log('login')
   }
 
   ngOnInit() {
@@ -23,10 +22,11 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.model.pseudo, this.model.password)
       .subscribe(
         (response: any) => {
-          console.log('hola !');
           this.router.navigate(['/']);
         },
-        error => console.log(error)
+        error => {
+          
+        }
       );
   }
 }

@@ -22,7 +22,6 @@ export class EditProfileComponent {
               private router: Router,
               private  route: ActivatedRoute) {
     this.profile = this.route.snapshot.data.profile;
-    console.log(this.profile);
   }
 
   editProfile: FormGroup;
@@ -57,15 +56,12 @@ export class EditProfileComponent {
       this.editProfile.value.weight,
       this.editProfile.value.password).subscribe(
       response => {
-        console.log(response);
         this.router.navigate(['/profile']);
       },
       error => {
-        console.log(error);
       });
 
     // if (this.editProfile.value.password && this.editProfile.value.confirmPassword) {
-    //   console.log(this.editProfile.value);
     //   var p = {
     //     _id: this.profile._id,
     //     name: this.editProfile.value.name,
@@ -74,13 +70,11 @@ export class EditProfileComponent {
     //     breed: this.editProfile.value.breed,
     //     weight: this.editProfile.value.weight
     //   }
-    //   console.log(p);
     //   this.pangolinService.update(p).subscribe(
     //     response => {
-    //       console.log(response);
     //       this.router.navigate(['/profile']);},
-    //       error => {console.log(error);
-    //     });
+    //       error => {  }
+    //   );
     // } else {
     //   var p = {
     //     _id: this.profile._id,
@@ -90,12 +84,10 @@ export class EditProfileComponent {
     //     breed: this.editProfile.value.breed,
     //     weight: this.editProfile.value.weight
     //   }
-    //   console.log(p);
     //   this.pangolinService.update(p).subscribe(
     //       response => {
-    //         console.log(response);
     //         this.router.navigate(['/profile']); },
-    //       error => {console.log(error); }
+    //       error => {}
     //     );
     // }
 

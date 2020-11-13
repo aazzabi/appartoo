@@ -25,7 +25,6 @@ export class UserServices {
 /*
   constructor(private service: UserServices) {
     this.service.getAll().subscribe(res => {
-      console.log(res);
     });
 
 environment.prod.ts

@@ -44,7 +44,6 @@ export class RegisterComponent implements OnInit{
 
   onSubmit() {
     this.submitted = true;
-    console.log('clicked')
     this.toast.success('Success');
 
     this.p = new Pangolin(
@@ -53,14 +52,12 @@ export class RegisterComponent implements OnInit{
       this.registerForm.value.password,
       this.registerForm.value.breed,
       this.registerForm.value.weight);
-    console.log(this.registerForm.value);
     this.registerService.register(this.p)
       .subscribe(
         response => {
           this.router.navigate(['/login']);
         },
         error => {
-          console.log(error);
         }
       );
 

@@ -18,10 +18,8 @@ export class RoleGuard implements CanActivate {
             // check if user is allowed
             const match = rolesAllowed.find(ob => ob === user.role);
             if (match != null) {
-              console.log('maatch true' + match);
               return true;
             } else {
-              console.log('maatch false');
               this.router.navigate(['/']);
               return false;
             }

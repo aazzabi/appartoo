@@ -13,6 +13,5 @@ export class MyProfileComponent {
 
   constructor( private router: Router, private  route: ActivatedRoute) {
     this.profile = this.route.snapshot.data.profile;
-    console.log(this.profile);
   }
 }
