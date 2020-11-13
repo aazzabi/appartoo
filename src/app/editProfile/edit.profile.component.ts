@@ -56,42 +56,13 @@ export class EditProfileComponent {
       this.editProfile.value.pseudo,
       this.editProfile.value.breed,
       this.editProfile.value.weight,
+      this.editProfile.value.phone,
+      this.editProfile.value.address,
       this.editProfile.value.password).subscribe(
       response => {
         this.router.navigate(['/profile']);
       },
       error => {
       });
-
-    // if (this.editProfile.value.password && this.editProfile.value.confirmPassword) {
-    //   var p = {
-    //     _id: this.profile._id,
-    //     name: this.editProfile.value.name,
-    //     pseudo: this.editProfile.value.pseudo,
-    //     password: this.editProfile.value.password,
-    //     breed: this.editProfile.value.breed,
-    //     weight: this.editProfile.value.weight
-    //   }
-    //   this.pangolinService.update(p).subscribe(
-    //     response => {
-    //       this.router.navigate(['/profile']);},
-    //       error => {  }
-    //   );
-    // } else {
-    //   var p = {
-    //     _id: this.profile._id,
-    //     name: this.editProfile.value.name,
-    //     pseudo: this.editProfile.value.pseudo,
-    //     password: this.editProfile.value.password,
-    //     breed: this.editProfile.value.breed,
-    //     weight: this.editProfile.value.weight
-    //   }
-    //   this.pangolinService.update(p).subscribe(
-    //       response => {
-    //         this.router.navigate(['/profile']); },
-    //       error => {}
-    //     );
-    // }
-
   }
 }

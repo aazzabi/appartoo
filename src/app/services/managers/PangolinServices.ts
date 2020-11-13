@@ -6,7 +6,7 @@ import {StorageService} from '../security/storage.service';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type': 'application/x-www-form-urlencoded',
+    'Content-Type': 'application/json',
     'Access-Control-Allow-Methods': 'POST,GET,DELETE,PUT'
   }),
   responseType: 'text' as 'text'
@@ -32,11 +32,11 @@ export class PangolinServices {
   }
 
   // tslint:disable-next-line:variable-name
-  update(_id: any, name: string, pseudo: string, breed: string, weight: any, password?: string) {
+  update(_id: any, name: string, pseudo: string, breed: string, weight: any, phone: any, address: any, password: string) {
     if (password) {
-      return this.http.put(this.url + '/pangolins/update', {_id, name, pseudo, password, breed, weight}, httpOptions);
+      return this.http.put(this.url + '/pangolins/update', {_id, name, pseudo, breed, password, phone, address, weight} , httpOptions);
     } else {
-      return this.http.put(this.url + '/pangolins/update', {_id, name, pseudo, breed, weight}, httpOptions);
+      return this.http.put(this.url + '/pangolins/update', {_id, name, pseudo, breed,  phone, address, weight} , httpOptions);
     }
   }
 
