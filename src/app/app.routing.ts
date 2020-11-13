@@ -11,7 +11,12 @@ import {MyProfileComponent} from './profile/my.profile.component';
 import {EditProfileComponent} from './editProfile/edit.profile.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent, canActivate: [AuthGuard], resolve: {pangolin: GetPangolinResolver, allUnknownPangolin: GetAllUnknownPangolinResolver}},
+  {
+    path: '',
+    component: HomeComponent,
+    canActivate: [AuthGuard],
+    resolve: {pangolin: GetPangolinResolver, allUnknownPangolin: GetAllUnknownPangolinResolver}
+  },
   {path: 'profile', component: MyProfileComponent, canActivate: [AuthGuard] , resolve: {profile: GetProfilePangolinResolver}},
   {path: 'editProfile', component: EditProfileComponent, canActivate: [AuthGuard] , resolve: {profile: GetProfilePangolinResolver}},
   {path: 'login', component: LoginComponent, canActivate: [IsAuthenticatedGuard]},

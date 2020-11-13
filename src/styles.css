@@ -1,7 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 label {
   color : black !important;
+  font-weight: 400 !important;
 }
-
+input.ng-invalid {
+  border: 1px solid red;
+}
+input.ng-untouched {
+  border: 0px solid black;
+}
+.invalid-feedback {
+  color: rgba(255, 0, 0, 0.73);
+  font-size: 13px;
+}
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
