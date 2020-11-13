@@ -18,6 +18,7 @@ const httpOptions = {
 export class PangolinServices {
   // @ts-ignore
   url = environment.SERVER_URL;
+  loggedUserID = StorageService.getUser().id;
 
   constructor(public http: HttpClient) {
   }
@@ -40,7 +41,7 @@ export class PangolinServices {
   }
 
   deletePangolinFromList(idPango: any) {
-    return this.http.post(this.url + '/pangolins/removeFromList/' + StorageService.getUser().id + '/' + idPango, null, httpOptions);
+    return this.http.post(this.url + '/pangolins/removeFromList/' + this.loggedUserID + '/' + idPango, null, httpOptions);
   }
 
   getAllUnknownPangolin(id: any) {
@@ -49,7 +50,13 @@ export class PangolinServices {
 
   // pseudo is unique
   addPangolinsToListByPseudo(pseudo: any) {
-    return this.http.get(this.url + '/pangolins/addToList/' + StorageService.getUser().id + '/' + pseudo);
+    console.log(this.url + '/pangolins/addToList/' + this.loggedUserID + '/' + pseudo);
+    return this.http.put(this.url + '/pangolins/addToList/' + this.loggedUserID + '/' + pseudo, null, httpOptions);
+  }
+
+  addPangolinsToList(id: any) {
+    console.log(this.url + '/pangolins/addPangolinToList/' + this.loggedUserID + '/' + id);
+    return this.http.get<any>(this.url + '/pangolins/addPangolinToList/' + this.loggedUserID + '/' + id);
   }
 
 

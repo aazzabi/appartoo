@@ -7,10 +7,10 @@
   </header>
   <div class="row">
     <form class="example-form">
-      <mat-form-field class="example-full-width">
+      <mat-form-field class="example-full-width" >
         <input matInput placeholder="Pangolin" aria-label="Pangolin" [matAutocomplete]="auto" [formControl]="pangolinCtrl">
         <mat-autocomplete #auto="matAutocomplete">
-          <mat-option *ngFor="let pangolin of filteredPangolins | async" [value]="pangolin.pseudo" >
+          <mat-option *ngFor="let pangolin of filteredPangolins | async" [value]="pangolin">
 <!--            <img style="vertical-align:middle;" aria-hidden src="{{pangolin.flag}}" height="25" />-->
             <span>{{ pangolin.name }}</span> <small>({{pangolin.pseudo}})</small>
           </mat-option>
@@ -31,12 +31,12 @@
         </div>
         <div class="description">
           <span class="call">
-            <i class="call icon"></i>{{contact.pseudo}}
+            <i class="call icon"></i>{{contact.phone}}
           </span>
         </div>
         <div class="description">
           <span class="marker">
-            <i class="marker icon"></i>{{contact.weight}}
+            <i class="marker icon"></i>{{contact.address}}
           </span>
         </div>
       </div>
