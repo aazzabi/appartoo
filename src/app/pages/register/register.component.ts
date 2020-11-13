@@ -30,6 +30,8 @@ export class RegisterComponent implements OnInit{
       name: new FormControl('', Validators.required),
       pseudo: new FormControl('', Validators.required),
       breed: new FormControl('', Validators.required),
+      phone: new FormControl('', Validators.required),
+      address: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
       confirmPassword: new FormControl('', Validators.required),
       weight: new FormControl('', [Validators.required, Validators.max(99999999)]),
@@ -51,7 +53,9 @@ export class RegisterComponent implements OnInit{
       this.registerForm.value.pseudo,
       this.registerForm.value.password,
       this.registerForm.value.breed,
-      this.registerForm.value.weight);
+      this.registerForm.value.weight,
+      this.registerForm.value.phone,
+      this.registerForm.value.address);
     this.registerService.register(this.p)
       .subscribe(
         response => {

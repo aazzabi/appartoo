@@ -34,6 +34,8 @@ export class EditProfileComponent {
       name: new FormControl(this.profile.name, Validators.required),
       pseudo: new FormControl(this.profile.pseudo, Validators.required),
       breed: new FormControl(this.profile.breed, Validators.required),
+      phone: new FormControl(this.profile.phone, Validators.required),
+      address: new FormControl(this.profile.address, Validators.required),
       password: new FormControl(''),
       confirmPassword: new FormControl(''),
       weight: new FormControl(this.profile.weight, [Validators.required, Validators.max(99999999)]),
@@ -49,7 +51,7 @@ export class EditProfileComponent {
   onSubmit() {
     this.submitted = true;
     this.pangolinService.update(
-      this.profile.id,
+      this.profile._id,
       this.editProfile.value.name,
       this.editProfile.value.pseudo,
       this.editProfile.value.breed,
