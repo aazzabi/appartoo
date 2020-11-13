@@ -6,6 +6,7 @@ import {LoginService} from '../services/security/login.service';
 import {ToastrService} from 'ngx-toastr';
 import {MustMatch} from '../pages/register/MustMatch';
 import {PangolinServices} from '../services/managers/PangolinServices';
+import {AlertService} from '../services/common/AlertService';
 
 @Component({
   selector: 'edit-profile',
@@ -16,6 +17,7 @@ export class EditProfileComponent {
   profile: Pangolin;
 
   constructor(private pangolinService: PangolinServices,
+              private alertService: AlertService,
               private loginService: LoginService,
               private formBuilder: FormBuilder,
               private toast: ToastrService,
@@ -61,6 +63,7 @@ export class EditProfileComponent {
       this.editProfile.value.password).subscribe(
       response => {
         this.router.navigate(['/profile']);
+        this.alertService.success('Votre profil a été modifié avec succéss');
       },
       error => {
       });
