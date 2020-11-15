@@ -56,6 +56,7 @@ import {GetProfilePangolinResolver} from './services/resolvers/get.profile.pango
 import { EditProfileComponent } from './editProfile/edit.profile.component';
 import {AlertComponent} from './alerteJumbotron/alert.component';
 import {AlertService} from './services/common/AlertService';
+import {AddComponent} from './add/add.component';
 
 
 @NgModule({
@@ -106,6 +107,7 @@ export class DemoMaterialModule {
     RegisterComponent,
     HomeComponent,
     AlertComponent,
+    AddComponent,
   ],
   imports: [
     HttpClientModule,

@@ -1,0 +1,92 @@
+<div class="wrapper wrapper-full-page">
+  <div class="full-page login-page" data-color="blue" data-image="../../../assets/img/full-screen-image-2.jpg">
+
+    <!--   you can change the color of the filter page using: data-color="blue | azure | green | orange | red | purple" -->
+    <div class="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+
+            <form [formGroup]="addPangolin">
+              <div class="card card-plain">
+                <div class="content">
+                  <div class="form-group row">
+                    <div class="col-md-6">
+                      <label>Nom</label>
+                      <input type="text" placeholder="Votre nom" formControlName="name" class="form-control">
+                      <div *ngIf="f.name.touched && f.name.errors" class="invalid-feedback">
+                        <div *ngIf="f.name.errors.required">Ce champ est obligatoire</div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label>Pseudo</label>
+                      <input type="text" placeholder="Votre pseudo" formControlName="pseudo" class="form-control">
+                      <div *ngIf="f.pseudo.touched && f.pseudo.errors" class="invalid-feedback">
+                        <div *ngIf="f.pseudo.errors.required">Ce champ est obligatoire</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-md-6">
+                      <label>Mot de passe : </label>
+                      <input type="password" placeholder="Mot de passe" formControlName="password" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                      <label>Confirmation de mot de passe :</label>
+                      <input type="password" placeholder="Password Confirmation" formControlName="confirmPassword"
+                             class="form-control">
+                      <div *ngIf="f.confirmPassword.touched && f.confirmPassword.errors" class="invalid-feedback">
+                        <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                        <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-md-6">
+                      <label>Téléphone :</label>
+                      <input type="text" placeholder="Votre plat préféré" formControlName="phone" class="form-control">
+                      <div *ngIf="f.phone.touched && f.phone.errors" class="invalid-feedback">
+                        <div *ngIf="f.phone.errors.required">Ce champ est obligatoire</div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label>Adresse :</label>
+                      <input type="text" placeholder="Votre plat préféré" formControlName="address"
+                             class="form-control">
+                      <div *ngIf="f.address.touched && f.address.errors" class="invalid-feedback">
+                        <div *ngIf="f.address.errors.required">Ce champ est obligatoire</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-md-6">
+                      <label>Nourriture :</label>
+                      <input type="text" placeholder="Votre plat préféré" formControlName="breed" class="form-control">
+                      <div *ngIf="f.breed.touched && f.breed.errors" class="invalid-feedback">
+                        <div *ngIf="f.breed.errors.required">Ce champ est obligatoire</div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label>Poids : </label>
+                      <input type="number" placeholder="Votre poids" formControlName="weight" class="form-control">
+                      <div *ngIf="f.weight.touched && f.weight.errors" class="invalid-feedback">
+                        <div *ngIf="f.weight.errors.required">Ce champ est obligatoire</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="footer text-center">
+                  <button type="submit" [disabled]="!addPangolin.valid" (click)="onSubmit()"
+                          class="btn btn-fill btn-neutral btn-wd">Confirmer
+                  </button>
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -7,7 +7,7 @@ import {StorageService} from '../security/storage.service';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Methods': 'POST,GET,DELETE,PUT'
+    'Access-Control-Allow-Methods': 'POST,GET,DELETE,PUT',
   }),
   responseType: 'text' as 'text'
 };

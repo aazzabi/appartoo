@@ -9,6 +9,7 @@ import {GetAllUnknownPangolinResolver} from './services/resolvers/get.all.unknow
 import {GetProfilePangolinResolver} from './services/resolvers/get.profile.pangolin.resolver';
 import {MyProfileComponent} from './profile/my.profile.component';
 import {EditProfileComponent} from './editProfile/edit.profile.component';
+import {AddComponent} from './add/add.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     resolve: {pangolin: GetPangolinResolver, allUnknownPangolin: GetAllUnknownPangolinResolver}
   },
+  {path: 'add', component: AddComponent, canActivate: [AuthGuard] },
   {path: 'profile', component: MyProfileComponent, canActivate: [AuthGuard] , resolve: {profile: GetProfilePangolinResolver}},
   {path: 'editProfile', component: EditProfileComponent, canActivate: [AuthGuard] , resolve: {profile: GetProfilePangolinResolver}},
   {path: 'login', component: LoginComponent, canActivate: [IsAuthenticatedGuard]},

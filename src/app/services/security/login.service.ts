@@ -5,6 +5,7 @@ import {map} from 'rxjs/operators';
 import {StorageService} from './storage.service';
 import {Pangolin} from '../../models/Pangolin';
 import {Tokens} from '../../models/Tokens';
+import {environment} from '../../../environments/environment.prod';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -31,6 +32,7 @@ export class LoginService {
   public static loggedPangolinId: number;
   private currentPangolinSubject: BehaviorSubject<Pangolin>;
   public currentPangolin: Observable<Pangolin>;
+  url = environment.SERVER_URL;
 
   apiUrl2 = 'http://localhost:3333/';
 
@@ -47,7 +49,7 @@ export class LoginService {
       .set('pseudo', pseudo)
       .set('password', password);
     return this.http
-      .post(this.apiUrl2 + 'login', body, httpOptions)
+      .post(this.url + 'login', body, httpOptions)
       .pipe(map(objectJson => {
           const response = JSON.parse(objectJson);
           const t = response && response.token;
