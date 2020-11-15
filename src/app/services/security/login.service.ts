@@ -49,7 +49,7 @@ export class LoginService {
       .set('pseudo', pseudo)
       .set('password', password);
     return this.http
-      .post(this.url + 'login', body, httpOptions)
+      .post(this.url + '/login', body, httpOptions)
       .pipe(map(objectJson => {
           const response = JSON.parse(objectJson);
           const t = response && response.token;
